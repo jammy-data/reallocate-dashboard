@@ -38,6 +38,7 @@ jobs:
       # Step 5: Run the container (to check if it runs correctly)
       - name: Run Docker container
         run: |
+          sleep 10
           docker run -d -p 8000:8000 -p 8501:8501 reallocate-dashboard
 
       # Step 6: Test the running container (Optional step for health check or functionality test)
