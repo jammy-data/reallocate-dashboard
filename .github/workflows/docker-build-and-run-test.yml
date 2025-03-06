@@ -45,6 +45,10 @@ jobs:
       - name: Test the running container
         run: |
           curl --fail http://localhost:8501 || exit 1
+      
+      - name: Capture Docker container logs if health check fails
+        run: |
+          docker logs my-running-container || echo "Failed to capture logs"
 
       # Step 7: Stop the Docker container after tests
       - name: Stop Docker container
