@@ -1,0 +1,53 @@
+name: Docker Build and Test
+
+on:
+  push:
+    branches:
+      - main  # Trigger this on push to main
+  pull_request:
+    branches:
+      - main  # Trigger this on pull request to main
+  workflow_dispatch:  # Trigger manually from GitHub UI
+
+jobs:
+  build_and_test:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Step 1: Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Step 2: Set up Docker Buildx (required for building Docker images)
+      - name: Set up Docker Buildx
+        uses: docker/setup-buildx-action@v2
+
+      # Step 3: Log in to Docker Hub (optional - only if pushing to Docker Hub)
+      # If you don't push to Docker Hub, you can skip this step.
+      # - name: Log in to Docker Hub
+      #   uses: docker/login-action@v2
+      #   with:
+      #     username: ${{ secrets.DOCKER_USERNAME }}
+      #     password: ${{ secrets.DOCKER_PASSWORD }}
+
+      # Step 4: Build the Docker image from the Dockerfile
+      - name: Build Docker image
+        run: |
+          docker build -t reallocate-dashboard .
+
+      # Step 5: Run the container (to check if it runs correctly)
+      - name: Run Docker container
+        run: |
+          docker run -d -p 8000:8000 -p 8501:8501 reallocate-dashboard
+
+      # Step 6: Test the running container (Optional step for health check or functionality test)
+      - name: Test the running container
+        run: |
+          curl --fail http://localhost:8000/health_check || exit 1  # Adjust endpoint as needed
+          # Or another test, such as pinging the Streamlit app
+          curl --fail http://localhost:8501 || exit 1
+
+      # Step 7: Stop the Docker container after tests
+      - name: Stop Docker container
+        run: |
+          docker stop $(docker ps -q)
