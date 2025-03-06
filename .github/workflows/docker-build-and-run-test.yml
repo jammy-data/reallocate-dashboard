@@ -39,9 +39,11 @@ jobs:
       - name: Run Docker container
         run: |
           docker run -d --name dashboard-container -p 8000:8000 -p 8501:8501 reallocate-dashboard
+      
      
       - name: Capture Docker container logs if health check fails
         run: |
+          sleep 10
           docker logs dashboard-container || echo "Failed to capture logs"
 
 
