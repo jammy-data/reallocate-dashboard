@@ -43,7 +43,7 @@ jobs:
       # Step 6: Test the running container (Optional step for health check or functionality test)
       - name: Test the running container
         run: |
-          curl --fail http://localhost:8000/health_check || exit 1  # Adjust endpoint as needed
+          curl --fail http://localhost:8000/pilot_api_data || exit 1  # Adjust endpoint as needed
           # Or another test, such as pinging the Streamlit app
           curl --fail http://localhost:8501 || exit 1
 
