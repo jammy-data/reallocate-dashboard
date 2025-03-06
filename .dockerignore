@@ -1,0 +1,30 @@
+# Ignore the virtual environment
+
+streamlit1/
+catboost_info/
+
+# Ignore Python cache files
+
+**pycache**/
+\*.pyc
+
+# Ignore downloaded map snaps
+
+/\*.html
+
+# Ignore system files
+
+.DS_Store
+
+# Ignore local environment files
+
+.env
+
+# Ignore logs and temporary files
+
+\*.log
+tmp/
+
+# Ignore version control directories
+
+.git/

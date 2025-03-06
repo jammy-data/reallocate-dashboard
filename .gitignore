@@ -1,0 +1,5 @@
+streamlit1/
+__pycache__/
+*.pyc
+/*.html
+.env

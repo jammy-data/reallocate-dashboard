@@ -1,0 +1,8 @@
+{
+    "accidents_&_injuries" : ["Cyclists and Pedestrians Conflicts", "Perceived Safety Improvement", "Incident Reduction", "Perceived Public Space Improvement"],
+    "space_reallocation" : ["Road space reallocation"],
+    "access_to_mobility_services" : ["Shared journeys for PMR"],
+    "modal_share" : ["Bike Parking Capacity"],
+    "air_pollution" : ["Environmental Impact"],
+    "other" : ["Participation Rate", "Stakeholder Feedback", "Community Participation Rate", "Integration of different data on sources", "Stakeholder Engagement Level"]
+}
