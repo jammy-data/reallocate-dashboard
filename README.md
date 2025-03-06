@@ -1,12 +1,12 @@
 ### To install
 
-1. git clone https://iti-gitlab.iti.gr/reallocate/streamlit-dashboard/streamlit-dashboard.git
+1. git clone https://github.com/V-for-Vaggelis/reallocate-dashboard.git
 
 ### To run with docker (Recommended)
 
 1. Build the image: `docker build -t reallocate-dashboard .`
 2. If you obtained API keys, start the container as: `docker run --env-file .env -p 8000:8000 -p 8501:8501 reallocate-dashboard` to periodically update the backend data.
-3. If not start as: `docker run -p 8000:8000 -p 8501:8501 reallocate-dashboard` for a static version
+3. If not, start as: `docker run -p 8000:8000 -p 8501:8501 reallocate-dashboard` for a static version
 
 ### To run without docker
 
