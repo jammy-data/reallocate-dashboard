@@ -43,7 +43,7 @@ jobs:
      
       - name: Capture Docker container logs if health check fails
         run: |
-          sleep 10
+          sleep 30
           docker logs dashboard-container || echo "Failed to capture logs"
 
 
