@@ -326,3 +326,25 @@ def load_html(file_path):
 def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
         return base64.b64encode(img_file.read()).decode("utf-8")
+    
+
+def filter_pilots_by_category(pilot_df, filter_string):
+    """
+    Filters pilots based on a given thematic cluster or impact area.
+    
+    Parameters:
+    df (DataFrame): The DataFrame containing pilot data.
+    filter_string (str): The category (either a thematic cluster or an impact area) to filter by.
+
+    Returns:
+    df: A dataframe of the filtered rows
+    """
+    # Ensure both thematic clusters and impact areas are treated as lists
+    pilot_df["Thematic Clasters"] = pilot_df["Thematic Clasters"].astype(str).str.split(", ")
+    pilot_df["Impact Areas"] = pilot_df["Impact Areas"].astype(str).str.split(", ")
+
+    # Filter rows where the filter_string appears in either column
+    mask = pilot_df["Thematic Clasters"].apply(lambda x: filter_string in x) | pilot_df["Impact Areas"].apply(lambda x: filter_string in x)
+    
+    # Return the matching pilot names
+    return pilot_df[mask]

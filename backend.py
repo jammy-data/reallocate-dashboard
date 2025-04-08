@@ -5,14 +5,17 @@ import threading  # To run scheduling in a separate thread
 from fastapi import FastAPI
 import uvicorn
 from helper_functions import update_weather, update_aqi, update_traffic
+import pandas as pd
 
 app = FastAPI()
 
+pilots_static_df = pd.read_excel('./static/pilot_static_data.xlsx', engine="openpyxl")
+locations = {row['name']: {"lat": row['lat'], "lon": row['lon']} for index, row in pilots_static_df.iterrows()}
 # Load pilot site locations
-with open("./pilot_sites.json") as f:
-    pilots = json.load(f)
+# with open("./pilot_sites.json") as f:
+#     pilots = json.load(f)
 
-locations = {pilot['name']: {"lat": pilot['coordinates'][0], "lon": pilot['coordinates'][1]} for pilot in pilots}
+# locations = {pilot['name']: {"lat": pilot['coordinates'][0], "lon": pilot['coordinates'][1]} for pilot in pilots}
 
 # Initial data update
 update_weather(locations)

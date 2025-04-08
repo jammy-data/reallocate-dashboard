@@ -15,7 +15,8 @@
             align-items: center;
             padding: 20px; /* Space inside the container */
             background-color: #f7f7f7; /* Light background for the container */
-            border-radius: 10px; /* Rounded corners for the container */  
+            border-radius: 8px; /* Rounded corners for the container */
+            border-bottom: 1px solid #ccc;  
         }
         .custom-title1 {
             font-size: 28px;
@@ -105,7 +106,7 @@
         }
         .scrollable-row, .scrollable-row-titles {
             display: flex;
-            justify-content: space-between
+            justify-content: space-between;
             width: auto;
             align-items: center;  /* Ensures content is vertically aligned */
         }
@@ -141,6 +142,13 @@
             text-decoration: underline;
         }
         @media (max-width: 750px) {
+            button[kind="secondary"] {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                text-align: center;
+                width: 100%;
+            }
             .custom-container {
                 justify-content: center; /* Center horizontally */
             }
@@ -183,4 +191,76 @@
         }
         div.stDownloadButton > button:hover {
             background-color: #005f73 !important;
+        }
+        .image-button {
+            border: none;
+            background: none;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+        }
+        .image-button img {
+            width: 100px;
+            height: 100px;
+        }
+        /* div.st-emotion-cache-12w0qpk > button {
+            background-color: red !important;
+            border: none;
+        }
+        .image-button + button {
+            background-color: red;
+        } */
+        button[kind="primary"] {
+            border: none;
+            color: darkblue;
+            background-color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            width: 100%;
+            transition: background-color 0.3s ease-in-out;
+          }
+        button[kind="primary"]:hover {
+            text-decoration: underline;
+            background-color: white;
+            color: blue;
+        }
+        .st-emotion-cache-j5r0tf {
+            transition: box-shadow 0.3s ease-in-out;
+        }
+        .st-emotion-cache-j5r0tf:has(button[kind="primary"]:hover) {
+            box-shadow: 0 0 10px rgba(0, 0, 255, 0.5);
+        }
+        button[kind="tertiary"] {
+            background-color: #ff7f00;
+            color: white;
+            font-weight: bold;
+            padding: 10px 20px;
+            border-radius: 8px;
+            border: none;
+            cursor: pointer;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.2);
+        }
+        .reset-button:hover {
+            background-color: #e66a00;
+        }
+        .city-image {
+            padding-bottom: 20px; /* Adjust space below image */
+        }
+        /* Style for expander buttons */
+        .stExpander {
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            transition: all 0.3s ease-in-out;
+        }
+
+        /* Hover effect */
+        .stExpander:hover {
+            background-color: #f0f0f0;
+            border-color: #007bff;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
