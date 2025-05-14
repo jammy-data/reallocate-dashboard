@@ -300,7 +300,7 @@ for index, row in st.session_state['filtered_pilots_df'].iterrows():
     intervention_start = row['Start Date']
     intervention_end = row['End Date']
     start_date = pd.to_datetime(intervention_start)
-    end_date = pd.to_datetime(intervention_end)
+    end_date = pd.to_datetime(intervention_end, dayfirst = True)
 
     # Display row with an expand feature
     with st.expander(f" {row['name']}"):
