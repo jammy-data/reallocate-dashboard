@@ -33,8 +33,10 @@ print(pilots_static_df.head())
 # Load JSON data
 with open("./static/indicators.json") as f_ind:
     indicators = json.load(f_ind)
+# indicator_list = list(indicators.keys())
+indicator_list = [item for sublist in indicators.values() for item in sublist if item != ""]
 
-indicator_list = [item for sublist in indicators.values() for item in sublist]
+# indicator_list = [item for sublist in indicators.values() for item in sublist]
 
 with open("./pilot_sites.json") as f:
     pilots = json.load(f)
@@ -112,8 +114,9 @@ st.markdown(
 # st.markdown(f'<h1 class="custom-title">Common Indicators: {st.session_state.legend.replace("_", " ").title()}</h1>', unsafe_allow_html=True)
 # st.title(f"Common Indicators: {st.session_state.legend.replace('_', ' ').title()}")       
 
+
 # Initialize a 2-column layout (left for controls, right for the map)
-col1, col2 = st.columns([1, 3])  # Adjust the ratio as needed
+col1, col2 = st.columns([1.75, 4])  # Adjust the ratio as needed
 
 # Left column (col1): Controls
 with col1:
@@ -121,7 +124,8 @@ with col1:
     # st.write("Choose a KPI:")
     
     
-    selected_kpi = st.selectbox("Choose a KPI or click a UMI:", indicator_list, key='kpi', on_change=reset_sumi)
+    
+    st.write("\n")
     st.write("\n")
     
     # st.header("SUMI categories")
@@ -133,6 +137,8 @@ with col1:
         update_pilots()
         # reset_impact_area()
 
+    st.markdown('<h5 class="umi-title">Urban Mobility Indices</h4>', unsafe_allow_html=True)
+    # st.markdown("#### Urban Mobility Indices") 
     sumis = list(indicators.keys())
     for sumi in sumis:
         sumi_string = sumi.replace("_", " ").title()
@@ -283,6 +289,8 @@ with col2:
     st_folium(m, width='100%', height=600, key="map_initial_load")
 
 
+selected_kpi = st.selectbox("Select a KPI", indicator_list, key='kpi', on_change=reset_sumi)
+
 st.markdown(
     f"""
     <div class="custom-container">
@@ -306,8 +314,8 @@ for index, row in st.session_state['filtered_pilots_df'].iterrows():
     with st.expander(f" {row['name']}"):
         
         st.write(f"📍 **City:** {re.sub(r'\(.*?\)', '', row['name']).strip()}")
-        st.write(f"📅 **Start Date:** {start_date}")
-        st.write(f"📅 **End Date:** {end_date}")
+        st.write(f"📅 **Start Date:** {start_date.date()}")
+        st.write(f"📅 **End Date:** {end_date.date()}")
         
         # Display additional info (description, lessons learned, image)
         st.write(f"📝 **Description:** {row['Description']}")

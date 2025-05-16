@@ -283,7 +283,7 @@ def value_to_color(data):
     return f"rgb({red}, {green}, {blue})"
 
 
-def average_color(colors):
+def average_color(colors=None):
     """
     Calculate the average color from a list of colors in the format f"rgb(r, g, b)".
     
@@ -301,17 +301,21 @@ def average_color(colors):
             return tuple(map(int, match.groups()))
         return None
 
-    # Extract all RGB values from the colors list
-    rgb_values = [extract_rgb(color) for color in colors]
+    if colors == None:
+        grey_value = 128
+        avg_r = avg_g = avg_b = grey_value
+    else:
+        # Extract all RGB values from the colors list
+        rgb_values = [extract_rgb(color) for color in colors]
 
-    # Calculate the average of each color channel
-    avg_r = sum(r for r, g, b in rgb_values) / len(rgb_values)
-    avg_g = sum(g for r, g, b in rgb_values) / len(rgb_values)
-    avg_b = sum(b for r, g, b in rgb_values) / len(rgb_values)
+        # Calculate the average of each color channel
+        avg_r = sum(r for r, g, b in rgb_values) / len(rgb_values)
+        avg_g = sum(g for r, g, b in rgb_values) / len(rgb_values)
+        avg_b = sum(b for r, g, b in rgb_values) / len(rgb_values)
 
     # Construct the average RGB color in the format f"rgb(r, g, b)"
     avg_color = f"rgb({int(avg_r)}, {int(avg_g)}, {int(avg_b)})"
-    
+        
     return avg_color
 
 # Convert the file to a downloadable format
@@ -340,11 +344,11 @@ def filter_pilots_by_category(pilot_df, filter_string):
     df: A dataframe of the filtered rows
     """
     # Ensure both thematic clusters and impact areas are treated as lists
-    pilot_df["Thematic Clasters"] = pilot_df["Thematic Clasters"].astype(str).str.split(", ")
+    pilot_df["UMI Categories"] = pilot_df["UMI Categories"].astype(str).str.split(", ")
     pilot_df["Impact Areas"] = pilot_df["Impact Areas"].astype(str).str.split(", ")
 
     # Filter rows where the filter_string appears in either column
-    mask = pilot_df["Thematic Clasters"].apply(lambda x: filter_string in x) | pilot_df["Impact Areas"].apply(lambda x: filter_string in x)
+    mask = pilot_df["UMI Categories"].apply(lambda x: filter_string in x) | pilot_df["Impact Areas"].apply(lambda x: filter_string in x)
     
     # Return the matching pilot names
     return pilot_df[mask]
