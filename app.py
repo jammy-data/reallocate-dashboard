@@ -313,7 +313,8 @@ for index, row in st.session_state['filtered_pilots_df'].iterrows():
     # Display row with an expand feature
     with st.expander(f" {row['name']}"):
         
-        st.write(f"📍 **City:** {re.sub(r'\(.*?\)', '', row['name']).strip()}")
+        cleaned_city_name = re.sub(r'\(.*?\)', '', row['name']).strip()
+        st.write(f"📍 **City:** {cleaned_city_name}")
         st.write(f"📅 **Start Date:** {start_date.date()}")
         st.write(f"📅 **End Date:** {end_date.date()}")
         
@@ -324,12 +325,15 @@ for index, row in st.session_state['filtered_pilots_df'].iterrows():
 
         # Display image from URL
         # st.image(row['Pictures'], caption=f"Image of {row['name']}", width=300)
-        st.markdown(f'<img src="{row["Pictures"]}" alt="Image of {row['name']}" width="300" class="city-image" />', unsafe_allow_html=True)
+
+        st.markdown(f"""<img src="{row["Pictures"]}" alt="Image of {row['name']}" width="300" class="city-image" />""", unsafe_allow_html=True)
+
 
 
         # Optional: Button to navigate/select
         if st.button(f"Show more", key=row['name']):
             st.write(f"You selected {row['name']}!")
+            st.switch_page("pages/Home.py")
 
 
 # Button click logic (simulated, replace with URL parameter handling)

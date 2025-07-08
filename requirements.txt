@@ -8,4 +8,14 @@ fastapi==0.115.8
 uvicorn==0.34.0
 python-dotenv==0.21.0
 openpyxl==3.1.2
+pyarrow>=20.0.0
+ckanapi>=4.8
+plotly
+ipython
+shapely
+geopandas
+seaborn
+scikit-learn
+numpy
+pandas
 # streamlit==1.12.0
