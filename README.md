@@ -19,6 +19,6 @@
 
 Before running the application:
 
-1. Get API keys for [WAQI](https://aqicn.org/data-platform/token/) and [TomTom](https://developer.tomtom.com/user/register?destination=/how-to-get-tomtom-api-key)
-2. Add their values in the WAQI_API_KEY and TRAFFIC_API_KEY placeholders in ".env.example"
+1. Get API keys for [WAQI](https://aqicn.org/data-platform/token/), [TomTom](https://developer.tomtom.com/user/register?destination=/how-to-get-tomtom-api-key) and [REALLOCATE_CKAN](https://reallocate-ckan.iti.gr)
+2. Add their values in the WAQI_API_KEY, TRAFFIC_API_KEY and REALLOCATE_API_KEY placeholders in ".env.example"
 3. Rename the env file `cp .env.example .env`
