@@ -176,6 +176,12 @@
                 width: 200px;
                 margin-top: 40px;
             }
+            .umi-title {
+                text-align: center;
+                border-bottom: 1px solid #ccc; /* Adds a light border under the header row */
+                background-color: #f7f7f7;
+                margin-bottom: 10px;
+            }
         }
         div.stDownloadButton > button {
             background-color: #008CBA !important;
@@ -263,4 +269,10 @@
             background-color: #f0f0f0;
             border-color: #007bff;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+        .umi-title {
+            /* text-align: center; */
+            /* border-bottom: 1px solid #ccc; Adds a light border under the header row */
+            background-color: #f7f7f7;
+            margin-bottom: 10px;
         }

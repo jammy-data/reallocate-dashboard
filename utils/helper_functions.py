@@ -217,7 +217,7 @@ def update_traffic(locations):
 def load_weather_json():
     """ Loads the existing data from the JSON file """
     try:
-        with open("pilot_weather.json", "r") as f:
+        with open("./data/pilot_weather.json", "r") as f:
             return json.load(f)
     except json.JSONDecodeError:
         print("Failed to load API data")
@@ -228,7 +228,7 @@ def load_weather_json():
 
 def save_json(data):
     """ Saves the updated data (weather & AQI) to a JSON file """
-    with open("pilot_weather.json", "w") as f:
+    with open("./data/pilot_weather.json", "w") as f:
         json.dump(data, f, indent=4)
     print("JSON updated!")
 

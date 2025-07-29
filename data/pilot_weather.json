@@ -1,0 +1,244 @@
+{
+    "locations": {
+        "Gothenburg (pilot 1)": {
+            "weather": {
+                "temperature": 22.4,
+                "humidity": 57.9,
+                "precipitation": 0.0,
+                "last_updated": 1753785432.851602
+            },
+            "air_quality": {
+                "AQI": 24,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.0,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Gothenburg (pilot 2)": {
+            "weather": {
+                "temperature": 22.7,
+                "humidity": 56.8,
+                "precipitation": 0.0,
+                "last_updated": 1753785433.1318629
+            },
+            "air_quality": {
+                "AQI": 15,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.0,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Heidelberg (pilot 1)": {
+            "weather": {
+                "temperature": 18.3,
+                "humidity": 73.7,
+                "precipitation": 0.0,
+                "last_updated": 1753785433.4221158
+            },
+            "air_quality": {
+                "AQI": 37,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.23255813953488372,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Heidelberg (pilot 2)": {
+            "weather": {
+                "temperature": 18.3,
+                "humidity": 73.7,
+                "precipitation": 0.0,
+                "last_updated": 1753785433.650961
+            },
+            "air_quality": {
+                "AQI": 37,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.0,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Barcelona (pilot 1)": {
+            "weather": {
+                "temperature": 23.7,
+                "humidity": 64.5,
+                "precipitation": 0.2,
+                "last_updated": 1753785433.8848577
+            },
+            "air_quality": {
+                "AQI": 17,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.2777777777777778,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Barcelona (pilot 2)": {
+            "weather": {
+                "temperature": 23.1,
+                "humidity": 64.5,
+                "precipitation": 0.2,
+                "last_updated": 1753785434.1109571
+            },
+            "air_quality": {
+                "AQI": 20,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.2777777777777778,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Budapest (pilot 1)": {
+            "weather": {
+                "temperature": 23.0,
+                "humidity": 52.2,
+                "precipitation": 0.0,
+                "last_updated": 1753785434.3322697
+            },
+            "air_quality": {
+                "AQI": 11,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.5142857142857142,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Budapest (pilot 2)": {
+            "weather": {
+                "temperature": 23.7,
+                "humidity": 49.2,
+                "precipitation": 0.0,
+                "last_updated": 1753785434.5657887
+            },
+            "air_quality": {
+                "AQI": 11,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.8333333333333334,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Lyon (pilot 1)": {
+            "weather": {
+                "temperature": 21.1,
+                "humidity": 48.0,
+                "precipitation": 0.0,
+                "last_updated": 1753785434.7945461
+            },
+            "air_quality": {
+                "AQI": 22,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.0,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Lyon (pilot 2)": {
+            "weather": {
+                "temperature": 21.1,
+                "humidity": 48.0,
+                "precipitation": 0.0,
+                "last_updated": 1753785435.0140142
+            },
+            "air_quality": {
+                "AQI": 29,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.0,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Bologna": {
+            "weather": {
+                "temperature": 24.1,
+                "humidity": 60.5,
+                "precipitation": 0.0,
+                "last_updated": 1753785435.2474244
+            },
+            "air_quality": {
+                "AQI": 13,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.21875,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Utrecht": {
+            "weather": {
+                "temperature": 19.3,
+                "humidity": 62.3,
+                "precipitation": 0.0,
+                "last_updated": 1753785435.4723668
+            },
+            "air_quality": {
+                "AQI": 22,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.2916666666666667,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Tampere": {
+            "weather": {
+                "temperature": 24.7,
+                "humidity": 81.1,
+                "precipitation": 0.0,
+                "last_updated": 1753785435.6984398
+            },
+            "air_quality": {
+                "AQI": 44,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.3,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Warsaw": {
+            "weather": {
+                "temperature": 19.7,
+                "humidity": 70.0,
+                "precipitation": 0.0,
+                "last_updated": 1753785435.9208343
+            },
+            "air_quality": {
+                "AQI": 43,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 0.0,
+                "last_updated": 1753788466.607782
+            }
+        },
+        "Zagreb": {
+            "weather": {
+                "temperature": 20.1,
+                "humidity": 66.3,
+                "precipitation": 0.0,
+                "last_updated": 1753785436.103728
+            },
+            "air_quality": {
+                "AQI": 32,
+                "last_updated": 1753785436.2930014
+            },
+            "traffic": {
+                "congestion_level": 1.0,
+                "last_updated": 1753788466.607782
+            }
+        }
+    }
+}

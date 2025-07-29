@@ -6,17 +6,19 @@ from streamlit_folium import st_folium
 from datetime import datetime
 # from visualization_utils import create_barplot, create_linechart
 from branca.element import Template, MacroElement
+import sys
+import os
+sys.path.append(os.path.abspath("utils"))  # adjust relative path
 from helper_functions import value_to_color, average_color, get_binary_file, load_html, get_base64_image, filter_pilots_by_category
 import streamlit.components.v1 as components
 import random
 import requests
 import base64
-import os
 import pandas as pd
 import re
 
 # Load the legend template as an HTML element
-legend_template = load_html("./static/legend_macro.html")
+legend_template = load_html("./components/legend_macro.html")
 def get_api_url():
     # Check if we're inside Docker (by checking the environment variable)
     if os.getenv('DOCKER', 'false') == 'true':
@@ -27,19 +29,19 @@ def get_api_url():
 st.set_page_config(page_title="My App", layout="wide")  # Adjust layout to wide for more space
 
 
-pilots_static_df = pd.read_excel('./static/pilot_static_data.xlsx', engine="openpyxl")
+pilots_static_df = pd.read_excel('./config/pilot_static_data.xlsx', engine="openpyxl")
 print(pilots_static_df.head())
 
 # Load JSON data
-with open("./static/indicators.json") as f_ind:
+with open("./config/indicators.json") as f_ind:
     indicators = json.load(f_ind)
 # indicator_list = list(indicators.keys())
 indicator_list = [item for sublist in indicators.values() for item in sublist if item != ""]
 
 # indicator_list = [item for sublist in indicators.values() for item in sublist]
 
-with open("./pilot_sites.json") as f:
-    pilots = json.load(f)
+# with open("./pilot_sites.json") as f:
+#     pilots = json.load(f)
 
 # Some session state initializations
 if "kpi" not in st.session_state:
@@ -63,8 +65,8 @@ def reset_impact_area():
     if st.session_state["impact_area"] is not None:
         st.session_state["impact_area"] = None
 
-logo1_base64 = get_base64_image("./static/logo.jpg")
-logo2_base64 = get_base64_image("./static/REALLOCATE_Logo.png")
+logo1_base64 = get_base64_image("./assets/logos/logo.jpg")
+logo2_base64 = get_base64_image("./assets/logos/REALLOCATE_Logo.png")
 
 
 # Reapply filtering every time impact area or SUMI changes
@@ -160,7 +162,7 @@ def get_base64_image(image_path):
 
 
 # Load local images and convert to base64
-image_paths = ["./static/road_safety.png", "./static/environment.png", "./static/governance.png", "./static/accessibility.png"]
+image_paths = ["./assets/images/road_safety.png", "./assets/images/environment.png", "./assets/images/governance.png", "./assets/images/accessibility.png"]
 image_base64 = [get_base64_image(img) for img in image_paths]
 
 def render_buttons():
@@ -200,7 +202,7 @@ with col2:
         site_name = row['name']
         site_lower = row['name'].lower()  # Convert site to lowercase
 
-        with open(f"./lyon_indicators_dummy.json") as f1: # open same dummy data for all pilots
+        with open(f"./data/pilots/pilot_indicators_dummy.json") as f1: # open same dummy data for all pilots
             indicator_data = json.load(f1)
 
         # Check the selected SUMI or KPI and set color
@@ -216,14 +218,14 @@ with col2:
                     color = f"rgb(128, 128, 128)"  # grey
                 color_list.append(color)
             current_color = average_color(color_list)
-            map_file = "{}_map.html".format(st.session_state.selected_sumi)
+            map_file = "./assets/map_snapshots/{}_map.html".format(st.session_state.selected_sumi)
         elif st.session_state.kpi.lower().replace(" ", "_") in indicator_data.keys():
             indicator_values = indicator_data[st.session_state.kpi.lower().replace(" ", "_")]
             current_color = value_to_color(indicator_values)
-            map_file = "{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
+            map_file = "./assets/map_snapshots/{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
         else:
             current_color = f"rgb(128, 128, 128)"  # grey
-            map_file = "{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
+            map_file = "./assets/map_snapshots/{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
 
 
         try:
@@ -280,7 +282,7 @@ with col2:
         st.download_button(
             label="📥 Download Map",
             data=map_data,
-            file_name=map_file,
+            file_name=map_file.replace("./assets/map_snapshots/", ""),
             mime="text/html"
         )
         st.button("🔄 Remove Filters", key="reset-button", type="secondary", on_click=reset_filters)
@@ -358,7 +360,7 @@ st.markdown(
 
 
 # Custom CSS styles
-with open("./static/styles.css") as f:
+with open("./components/styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
