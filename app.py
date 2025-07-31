@@ -29,7 +29,8 @@ def get_api_url():
 st.set_page_config(page_title="My App", layout="wide")  # Adjust layout to wide for more space
 
 
-pilots_static_df = pd.read_excel('./config/pilot_static_data.xlsx', engine="openpyxl")
+# pilots_static_df = pd.read_excel('./config/pilot_static_data.xlsx', engine="openpyxl")
+pilots_static_df = pd.read_json('./config/pilot_static_data.json')
 print(pilots_static_df.head())
 
 # Load JSON data

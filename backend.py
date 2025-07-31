@@ -27,7 +27,8 @@ class KPIPost(BaseModel):
 
 app = FastAPI()
 
-pilots_static_df = pd.read_excel('./config/pilot_static_data.xlsx', engine="openpyxl")
+# pilots_static_df = pd.read_excel('./config/pilot_static_data.xlsx', engine="openpyxl")
+pilots_static_df = pd.read_json('./config/pilot_static_data.json')
 locations = {row['name']: {"lat": row['lat'], "lon": row['lon']} for index, row in pilots_static_df.iterrows()}
 # Load pilot site locations
 # with open("./pilot_sites.json") as f:
