@@ -1,0 +1,10 @@
+{   
+    "Accidents & Injuries" : ["Addressing Conflicts Between Cyclists and Pedestrians", "Perceived Safety Improvement", "Incident Reduction", "VRUs' Perception of Safety", "Safety Improvement"],
+    "Modal Share": ["Bike Parking Capacity", "Increased Bike Parking Spaces", "Cyclist Count", "Active Mobility Mode Share", "Mode Share Shift"],
+    "Congestion": [""],
+    "Access to Mobility Services": ["Accessibility Enhancement", "Shared journeys for PMR (Persons with Reduced Mobility)", "Accessibility Improvement"],
+    "Space Reallocation": ["Road Space Reallocation", "Perceived Public Space Improvement", "Improved Walkable Conditions", "Adaptability Rating", "Walkability Index", "Accessibility Improvements"],
+    "GHG Emissions": [""],
+    "Air Pollution": ["Green Area Expansion", "Number of Trees Planted", "Vegetated Surface Area Increase"],
+    "Noise Pollution": [""]
+}
