@@ -6,17 +6,19 @@ from streamlit_folium import st_folium
 from datetime import datetime
 # from visualization_utils import create_barplot, create_linechart
 from branca.element import Template, MacroElement
-from helper_functions import value_to_color, average_color, get_binary_file, load_html, get_base64_image, filter_pilots_by_category
+import sys
+import os
+sys.path.append(os.path.abspath("utils"))  # adjust relative path
+from utils.helper_functions import value_to_color, average_color, get_binary_file, load_html, get_base64_image, filter_pilots_by_category
 import streamlit.components.v1 as components
 import random
 import requests
 import base64
-import os
 import pandas as pd
 import re
 
 # Load the legend template as an HTML element
-legend_template = load_html("./static/legend_macro.html")
+legend_template = load_html("./components/legend_macro.html")
 def get_api_url():
     # Check if we're inside Docker (by checking the environment variable)
     if os.getenv('DOCKER', 'false') == 'true':
@@ -27,19 +29,20 @@ def get_api_url():
 st.set_page_config(page_title="My App", layout="wide")  # Adjust layout to wide for more space
 
 
-pilots_static_df = pd.read_excel('./static/pilot_static_data.xlsx', engine="openpyxl")
+# pilots_static_df = pd.read_excel('./config/pilot_static_data.xlsx', engine="openpyxl")
+pilots_static_df = pd.read_json('./config/pilot_static_data.json')
 print(pilots_static_df.head())
 
 # Load JSON data
-with open("./static/indicators.json") as f_ind:
+with open("./config/indicators.json") as f_ind:
     indicators = json.load(f_ind)
 # indicator_list = list(indicators.keys())
 indicator_list = [item for sublist in indicators.values() for item in sublist if item != ""]
 
 # indicator_list = [item for sublist in indicators.values() for item in sublist]
 
-with open("./pilot_sites.json") as f:
-    pilots = json.load(f)
+# with open("./pilot_sites.json") as f:
+#     pilots = json.load(f)
 
 # Some session state initializations
 if "kpi" not in st.session_state:
@@ -63,8 +66,8 @@ def reset_impact_area():
     if st.session_state["impact_area"] is not None:
         st.session_state["impact_area"] = None
 
-logo1_base64 = get_base64_image("./static/logo.jpg")
-logo2_base64 = get_base64_image("./static/REALLOCATE_Logo.png")
+logo1_base64 = get_base64_image("./assets/logos/logo.jpg")
+logo2_base64 = get_base64_image("./assets/logos/REALLOCATE_Logo.png")
 
 
 # Reapply filtering every time impact area or SUMI changes
@@ -160,7 +163,7 @@ def get_base64_image(image_path):
 
 
 # Load local images and convert to base64
-image_paths = ["./static/road_safety.png", "./static/environment.png", "./static/governance.png", "./static/accessibility.png"]
+image_paths = ["./assets/images/road_safety.png", "./assets/images/environment.png", "./assets/images/governance.png", "./assets/images/accessibility.png"]
 image_base64 = [get_base64_image(img) for img in image_paths]
 
 def render_buttons():
@@ -200,7 +203,7 @@ with col2:
         site_name = row['name']
         site_lower = row['name'].lower()  # Convert site to lowercase
 
-        with open(f"./lyon_indicators_dummy.json") as f1: # open same dummy data for all pilots
+        with open(f"./data/pilots/pilot_indicators_dummy.json") as f1: # open same dummy data for all pilots
             indicator_data = json.load(f1)
 
         # Check the selected SUMI or KPI and set color
@@ -216,14 +219,14 @@ with col2:
                     color = f"rgb(128, 128, 128)"  # grey
                 color_list.append(color)
             current_color = average_color(color_list)
-            map_file = "{}_map.html".format(st.session_state.selected_sumi)
+            map_file = "./assets/map_snapshots/{}_map.html".format(st.session_state.selected_sumi)
         elif st.session_state.kpi.lower().replace(" ", "_") in indicator_data.keys():
             indicator_values = indicator_data[st.session_state.kpi.lower().replace(" ", "_")]
             current_color = value_to_color(indicator_values)
-            map_file = "{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
+            map_file = "./assets/map_snapshots/{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
         else:
             current_color = f"rgb(128, 128, 128)"  # grey
-            map_file = "{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
+            map_file = "./assets/map_snapshots/{}_map.html".format(st.session_state.kpi.lower().replace(" ", "_"))
 
 
         try:
@@ -280,7 +283,7 @@ with col2:
         st.download_button(
             label="📥 Download Map",
             data=map_data,
-            file_name=map_file,
+            file_name=map_file.replace("./assets/map_snapshots/", ""),
             mime="text/html"
         )
         st.button("🔄 Remove Filters", key="reset-button", type="secondary", on_click=reset_filters)
@@ -308,13 +311,13 @@ for index, row in st.session_state['filtered_pilots_df'].iterrows():
     intervention_start = row['Start Date']
     intervention_end = row['End Date']
     start_date = pd.to_datetime(intervention_start)
-    end_date = pd.to_datetime(intervention_end, dayfirst = True)
+    end_date = pd.to_datetime(intervention_end)
 
     # Display row with an expand feature
     with st.expander(f" {row['name']}"):
         
         cleaned_city_name = re.sub(r'\(.*?\)', '', row['name']).strip()
-        st.write(f"📍 **City:** {cleaned_city_name}")
+        st.write(f"📍 **City:** {cleaned_city_name}") 
         st.write(f"📅 **Start Date:** {start_date.date()}")
         st.write(f"📅 **End Date:** {end_date.date()}")
         
@@ -326,14 +329,21 @@ for index, row in st.session_state['filtered_pilots_df'].iterrows():
         # Display image from URL
         # st.image(row['Pictures'], caption=f"Image of {row['name']}", width=300)
 
+
         st.markdown(f"""<img src="{row["Pictures"]}" alt="Image of {row['name']}" width="300" class="city-image" />""", unsafe_allow_html=True)
 
 
 
         # Optional: Button to navigate/select
-        if st.button(f"Show more", key=row['name']):
-            st.write(f"You selected {row['name']}!")
-            st.switch_page("pages/Home.py")
+        link = f"pilot?pilot={row['id']}"
+        st.markdown(
+                    f"""
+                    <a href="{link}" target="_self">
+                    <button style="margin-top: 1rem;">Show more</button>
+                    </a>
+                    """,
+                    unsafe_allow_html=True,
+                    )
 
 
 # Button click logic (simulated, replace with URL parameter handling)
@@ -362,7 +372,7 @@ st.markdown(
 
 
 # Custom CSS styles
-with open("./static/styles.css") as f:
+with open("./components/styles.css") as f:
     st.markdown(f"<style>{f.read()}</style>", unsafe_allow_html=True)
 
 
@@ -390,4 +400,3 @@ components.html(f"""
 # TODO: Log in and roles? (needs to be discussed though)
 # TODO: When indicators are finalized replace their matching with UMIs in the indicators.json file, currently a dummy matching is implemented
 # TODO: Replace with actual pictures and coordinates for pilots
-

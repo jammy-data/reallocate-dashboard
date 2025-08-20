@@ -1,0 +1,32 @@
+{
+  "id": "barcelona_pilot_2",
+  "city": "Barcelona",
+  "title": "Increased and Integrated Public Transport Accessibility System for People with Disabilities (Pilot 2)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Barcelona-Andrei-Stancu-dreamstime-61044707_small.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "Barcelona has a public door to door service for people with reduced mobility operating with a fleet of buses and taxis, providing programmed and sporadic journeys. However, the existing fleet struggles to meet the high demand for the service.",
+      "location": "City of Barcelona",
+      "lat": 41.3687750526896,
+      "lon": 2.16138428632556,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          2.16138428632556,
+          41.3687750526896
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "4",
+      "5"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

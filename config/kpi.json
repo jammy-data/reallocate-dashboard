@@ -1,0 +1,114 @@
+[
+  {
+    "id": 1,
+    "name": "Modal Share",
+    "category": "Modal Share",
+    "indicator": "Measure the percentage of commuters using active mobility options (walking or cycling) among the total number of commuters in the project area.",
+    "unit": "Percentage (%)"
+  },
+  {
+    "id": 2,
+    "name": "Number of Participants in Co-Creation Workshops",
+    "category": "Engagement",
+    "indicator": "Count the total number of individuals who actively participate in co-creation workshops focused on the design and promotion of active mobility infrastructure. ",
+    "unit": "Count"
+  },
+  {
+    "id": 3,
+    "name": "Conflicts Removed or Mitigated",
+    "category": "Accidents & Injuries",
+    "indicator": "Number of conflicts that have been removed or mitigated.",
+    "unit": "Count"
+  },
+  {
+    "id": 4,
+    "name": "Service coverage of Demand-Responsive Transport (DRT)",
+    "category": "Access to mobility services",
+    "indicator": "",
+    "unit": ""
+  },
+  {
+    "id": 5,
+    "name": "Replicability of Bicycle Policies",
+    "category": "Access to mobility services",
+    "indicator": "The percentage of other road sections or regions where the policy of allowing bicycles in both directions can be replicated or extended.",
+    "unit": "Percentage (%)"
+  },
+  {
+    "id": 6,
+    "name": "Pedestrian and Cyclist Comfort Rating",
+    "category": "Modal Share",
+    "indicator": "Assess the comfort and satisfaction of pedestrians and cyclists in using public spaces and intersections after safety improvements.",
+    "unit": "Scale (e.g., 1-5, 1-10)"
+  },
+  {
+    "id": 7,
+    "name": "Adapted Street Profiles and Reallocation of Spaces (intervention phase)",
+    "category": "Space Reallocation",
+    "indicator": "The extent of adapted street profiles and dynamically reallocated spaces to improve safety for different road users (e.g., bus lanes, cycle lanes).",
+    "unit": "Unit: Length (e.g., meters), Count (e.g., number of lanes)"
+  },
+  {
+    "id": 8,
+    "name": "Number of Endorsements",
+    "category": "Engagement",
+    "indicator": "The number of endorsements, petitions, or letters of support received from individuals and organizations endorsing the road space reallocation and the creation of safe environments near schools.",
+    "unit": "Count"
+  },
+  {
+    "id": 9,
+    "name": "Feasibility of Replication",
+    "category": "Replication",
+    "indicator": "An evaluation of the feasibility and practicality of replicating the system/approach/concept in different locations.",
+    "unit": "Subjective rating scale (e.g., Low, Medium, High)"
+  },
+  {
+    "id": 10,
+    "name": "Impact on Traffic Flows",
+    "category": "Congestion",
+    "indicator": "The change in traffic flows in low-traffic areas, including reductions in vehicle columes and congestion",
+    "unit": "Traffic flow parameters (e.g., vehicles per hour)"
+  },
+  {
+    "id": 11,
+    "name": "Accessibility and Inclusivity Index",
+    "category": "Access to mobility services",
+    "indicator": "The level of accessibility and inclusivity of the urban environment for all community members, including vulnerable groups (e.g., the elderly, people with disabilities).",
+    "unit": "Index or rating (e.g., on a scale from 1 to 100)"
+  },
+  {
+    "id": 12,
+    "name": "Permeable Surface Conversion Area",
+    "category": "Air pollution",
+    "indicator": "The total area of impermeable surface that has been converted into permeable and vegetated surfaces.",
+    "unit": "Square meters (sqm)"
+  },
+  {
+    "id": 13,
+    "name": "Reduction in Motorised Transport",
+    "category": "Congestion",
+    "indicator": "Reduction in the number of motorized vehicle trips or traffic volume on selected routes.",
+    "unit": "Count or traffic volume metrics (e.g., vehicles per hour)"
+  },
+  {
+    "id": 14,
+    "name": "Reduced Car Parking Spaces",
+    "category": "Modal Share",
+    "indicator": "The reduction in the number of car parking spaces in the low-traffic areas after the implementation of co-created solutions.",
+    "unit": "Count or Percentage (%)"
+  },
+  {
+    "id": 15,
+    "name": "Public perception of traffic conditions",
+    "category": "Engagement",
+    "indicator": "The percentage of citizens and stakeholders who have a positive perception of traffic conditions after the interventions.",
+    "unit": "Percentage (%)"
+  },
+  {
+    "id": 16,
+    "name": "School Route Usage Rate",
+    "category": "Modal Share",
+    "indicator": "The percentage change in the utilization of school routes by pedestrians and cyclists after the co-design interventions.",
+    "unit": "Percentage (%)"
+  }
+]

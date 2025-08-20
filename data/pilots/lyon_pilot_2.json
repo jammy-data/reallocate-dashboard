@@ -1,0 +1,32 @@
+{
+  "id": "lyon_pilot_2",
+  "city": "Lyon",
+  "title": "Road Safety Tech & Non-Pollution Parking Policy (Pilot 2)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Lyon-Barmalini-dreamstime-267827720_small.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "Lyon faces challenges such as road safety issues and pollution due to high motorised traffic levels. To address these, the city plans to manage traffic volumes, and discourage heavy vehicle usage through parking policies based on vehicle attributes.",
+      "location": "TBD",
+      "lat": 45.7546276142591,
+      "lon": 4.81238022968845,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.81238022968845,
+          45.7546276142591
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "12",
+      "14"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

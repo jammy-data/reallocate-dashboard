@@ -1,0 +1,28 @@
+[project]
+name = "reallocate-dashboard"
+version = "0.1.0"
+description = "Add your description here"
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "altair==4.1.0",
+    "streamlit==1.38.0",
+    "folium==0.17.0",
+    "streamlit-folium==0.22.0",
+    "matplotlib==3.7.5",
+    "schedule==1.2.2",
+    "fastapi==0.115.8",
+    "uvicorn==0.34.0",
+    "python-dotenv==0.21.0",
+    "openpyxl==3.1.2",
+    "pyarrow>=20.0.0",
+    "ckanapi>=4.8",
+    "plotly",
+    "ipython",
+    "shapely",
+    "geopandas",
+    "seaborn",
+    "scikit-learn",
+    "numpy",
+    "pandas",
+    ]

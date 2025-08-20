@@ -1,0 +1,31 @@
+{
+  "id": "warsaw",
+  "city": "Warsaw",
+  "title": "Green & Safe Road to School",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Warsaw-Dudlajzov-dreamstime-246908716_small2.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "In Warsaw, with a high motorisation rate, efforts are focused on improving road safety, especially for vulnerable road users like children. The initiative aims to reclaim pedestrian space, making it safer and more appealing for all.",
+      "location": "TBD",
+      "lat": 52.2297,
+      "lon": 21.0122,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          21.0122,
+          52.2297
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "16"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "gothenburg_pilot_1",
+  "city": "Gothenburg",
+  "title": "Safe System Approach for Children’s Active Travel in Peri-Urban Areas (Pilot 1)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Goteborg-Dudlajzov-dreamstime-246987644_2.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "In the neighbourhood of Bergum Gunnilse key mobility challenges concern insufficient lighting and a lack of pedestrian and bicycle paths as a consequence, many prefer to move around by car. ",
+      "location": "Bergum Gunnilse",
+      "lat": 57.70887,
+      "lon": 11.97456,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.97456,
+          57.70887
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "9"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

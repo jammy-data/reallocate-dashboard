@@ -1,0 +1,59 @@
+{
+  "id": "gothenburg_pilot_2",
+  "city": "Gothenburg",
+  "title": "Harnessing Digitalization to Foster Safe and Sustainable Solutions in Transformative Urban Mobility (Pilot 2)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Goteborg-Dudlajzov-dreamstime-246987644_2.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "Gothenburg leverages its digitalisation capabilities and data resources to proactively improve sustainable transportation, traffic safety and enhance accessibility in a city undergoing major transformation.",
+      "location": "Korsvägen junction",
+      "lat": 57.72887,
+      "lon": 11.99456,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              11.988656295824399,
+              57.692560486024036
+            ],
+            [
+              11.992843754502928,
+              57.69260580014722
+            ],
+            [
+              11.994803006703677,
+              57.69260541101923
+            ],
+            [
+              12.001383552053369,
+              57.693272632055
+            ],
+            [
+              12.000398471736958,
+              57.71005337592484
+            ],
+            [
+              11.976199728550569,
+              57.709444708258985
+            ],
+            [
+              11.988656295824399,
+              57.692560486024036
+            ]
+          ]
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "9"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

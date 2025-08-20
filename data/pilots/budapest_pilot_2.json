@@ -1,0 +1,105 @@
+{
+  "id": "budapest_pilot_2",
+  "city": "Budapest",
+  "title": "Healthy Superblock (Pilot 2)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/arvydas-venckus-eYqmWlHsDQo-unsplash_small.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "The second SSML in Budapest draws inspiration from London’s healthy streets and Barcelona’s super-blocks, emphasising traffic calming interventions with a preference for public transport and active mobility modes.",
+      "location": "Peri-urban areas",
+      "lat": 47.487913,
+      "lon": 19.060236,
+      "geometry": {
+        "type": "MultiPolygon",
+        "coordinates": [
+          [
+            [
+              [
+                19.06318711017599,
+                47.48888528597601
+              ],
+              [
+                19.064719591937376,
+                47.488858813436366
+              ],
+              [
+                19.066251889173486,
+                47.488593139609094
+              ],
+              [
+                19.068138005549372,
+                47.48885870361008
+              ],
+              [
+                19.06770584786682,
+                47.48721250080783
+              ],
+              [
+                19.07057455560951,
+                47.48607071831185
+              ],
+              [
+                19.071242955150723,
+                47.48984147113211
+              ],
+              [
+                19.06939523782364,
+                47.489787916613466
+              ],
+              [
+                19.06613395010484,
+                47.489522346726375
+              ],
+              [
+                19.064130181302573,
+                47.4896819592862
+              ],
+              [
+                19.06318711017599,
+                47.48888528597601
+              ]
+            ]
+          ],
+          [
+            [
+              [
+                19.08224568980154,
+                47.58391194952543
+              ],
+              [
+                19.08122388831248,
+                47.58348788301859
+              ],
+              [
+                19.081145267883016,
+                47.5825071142018
+              ],
+              [
+                19.092933805047977,
+                47.576701739596786
+              ],
+              [
+                19.094073283984272,
+                47.577788504583026
+              ],
+              [
+                19.08224568980154,
+                47.58391194952543
+              ]
+            ]
+          ]
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "7"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

@@ -1,0 +1,18 @@
+
+{
+    "reallocate": {
+        "src": "https://reallocatemobility.eu/maintemplate/data/logos/logo.png",
+        "href": "https://reallocatemobility.eu",
+        "alt": "Reallocate Logo"
+    },
+    "bsc": {
+        "src": "https://earth.bsc.es/shiny/ess-oper/www/bsc_logo.png",
+        "href": "https://www.bsc.es",
+        "alt": "BSC Logo"
+    },
+    "iti": {
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWQFMncXjLlcCAUOzDCuYMG4QAZTQ-Ivj14g&s",
+        "href": "https://www.iti.gr/iti/en/home/",
+        "alt_text": "ITI Logo"
+    }
+}

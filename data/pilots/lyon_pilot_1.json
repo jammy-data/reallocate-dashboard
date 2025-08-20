@@ -1,0 +1,33 @@
+{
+  "id": "lyon_pilot_1",
+  "city": "Lyon",
+  "title": "Public Space Redesigning and Enhancing Road Safety in the Schools’ Surroundings (Pilot 1)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Lyon-Barmalini-dreamstime-267827720_small.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "This initiative integrates a comprehensive qualitative and quantitative assessment, encompassing speed measurements, pedestrian, cyclist, and e-scooter counts, with the development of mobility plans for schools and targeted college interventions.",
+      "location": "School areas",
+      "lat": 45.7646276142591,
+      "lon": 4.83238022968845,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          4.83238022968845,
+          45.7646276142591
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "12",
+      "13",
+      "14"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

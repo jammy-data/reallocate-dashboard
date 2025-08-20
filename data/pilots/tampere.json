@@ -1,0 +1,31 @@
+{
+  "id": "tampere",
+  "city": "Tampere",
+  "title": "AI for Increased Road Safety, Space Reallocation & Parametric Design",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Tampere-Igor-Groshev-dreamstime-62346303_small.png",
+  "tabs": {
+    "Pilot Info": {
+      "description": "The SSML focuses on road safety enhancements through an algorithm for identifying near-miss situations and safety hazards like harsh braking and cornering. It also includes implementing traffic calming measures and promoting sustainable mobility.",
+      "location": "TBD",
+      "lat": 61.5007546302076,
+      "lon": 23.7478616548067,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          23.7478616548067,
+          61.5007546302076
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "8"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

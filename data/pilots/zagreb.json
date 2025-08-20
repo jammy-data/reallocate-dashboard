@@ -1,0 +1,31 @@
+{
+  "id": "zagreb",
+  "city": "Zagreb",
+  "title": "Central Traffic Corridor Holistic Solutions",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Zagreb-Domagoj-Kova-Dreamstime-110155865_small.png",
+  "tabs": {
+    "Pilot Info": {
+      "description": "The SSML in Zagreb will target a densely populated urban area characterised by high volumes of vulnerable road users (VRUs), including pedestrians, cyclists, children, elderly individuals, and people with disabilities, alongside significant traffic congestion.",
+      "location": "Unsafe intersection of Selska – Horvaćanska Street.",
+      "lat": 45.815,
+      "lon": 15.9819,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          15.9819,
+          45.815
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "15"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

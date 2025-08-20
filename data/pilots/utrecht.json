@@ -1,0 +1,31 @@
+{
+  "id": "utrecht",
+  "city": "Utrecht",
+  "title": "Safety-proofing schools in vulnerable neighbourhoods",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Utrecht-Jan-Sluimer-dreamstime-115325784_small.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "The SSML addresses community needs by improving traffic management, reducing pollution, and promoting sustainable transportation for enhanced safety and air quality. It focuses on fostering active mobility and safe transportation for residents.",
+      "location": "TBD",
+      "lat": 52.0919,
+      "lon": 5.123,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          5.123,
+          52.0919
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "15"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

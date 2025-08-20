@@ -1,0 +1,75 @@
+{
+  "id": "budapest_pilot_1",
+  "city": "Budapest",
+  "title": "Improving Traffic Safety in Budapest's Peri-urban Areas (Pilot 1)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/arvydas-venckus-eYqmWlHsDQo-unsplash_small.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "In harmony with the upcoming Cycle Traffic Network Plan, the SSML will focus on traffic calming and modal shift that can be used in the periurban stress points of the city, to create safer and more controlled intersections.",
+      "location": "District VIII",
+      "lat": 47.497913,
+      "lon": 19.040236,
+      "geometry": {
+        "type": "Polygon",
+        "coordinates": [
+          [
+            [
+              19.06318711017599,
+              47.48888528597601
+            ],
+            [
+              19.064719591937376,
+              47.488858813436366
+            ],
+            [
+              19.066251889173486,
+              47.488593139609094
+            ],
+            [
+              19.068138005549372,
+              47.48885870361008
+            ],
+            [
+              19.06770584786682,
+              47.48721250080783
+            ],
+            [
+              19.07057455560951,
+              47.48607071831185
+            ],
+            [
+              19.071242955150723,
+              47.48984147113211
+            ],
+            [
+              19.06939523782364,
+              47.489787916613466
+            ],
+            [
+              19.06613395010484,
+              47.489522346726375
+            ],
+            [
+              19.064130181302573,
+              47.4896819592862
+            ],
+            [
+              19.06318711017599,
+              47.48888528597601
+            ]
+          ]
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "7"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

@@ -1,0 +1,31 @@
+{
+  "id": "heidelberg_pilot_2",
+  "city": "Heidelberg",
+  "title": "Contextual & Tactical Public Space Reallocation (Pilot 2)",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Heidelberg-Waleed-Kurdi-dreamstime-245755622_small.jpg",
+  "tabs": {
+    "Pilot Info": {
+      "description": "In Heidelberg, homezone streets often fall short of expected standards for safety and vibrancy. The initiative utilises tactical elements like parklets and green infrastructure, along with adaptive land use strategies, to enhance the public quality of streets across diverse urban contexts.",
+      "location": "Four streets throughout the city ",
+      "lat": 49.37875,
+      "lon": 8.652434,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          8.652434,
+          49.37875
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "11"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}

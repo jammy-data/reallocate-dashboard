@@ -1,0 +1,31 @@
+{
+  "id": "bologna",
+  "city": "Bologna",
+  "title": "Neutral, Safe, and Sustainable School District along the Knowledge Path Interventions and Indicators",
+  "image": "https://reallocatemobility.eu/fileadmin/user_upload/Images/Page_Headers/Bologna-Madrugadaverde-dreamstime81338281_small.png",
+  "tabs": {
+    "Pilot Info": {
+      "description": "The aim of Bologna’s SSML is to implement the public space of the school district in collaboration with the school, students and local stakeholders in order to make it neutral and comfortable to encourage a sustainable, safe and autonomous daily home-school mobility.",
+      "location": "Via Erbosa, Via Gobetti, Via Cristoforo da Bologna, via Manin - along the Via della Conoscenza, Quartiere Navile",
+      "lat": 44.498955,
+      "lon": 11.327591,
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          11.327591,
+          44.498955
+        ]
+      }
+    },
+    "KPIs": [
+      "1",
+      "2",
+      "6"
+    ],
+    "Dashboard": {
+      "title": "",
+      "description": "",
+      "url": NaN
+    }
+  }
+}
