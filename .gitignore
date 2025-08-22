@@ -7,8 +7,5 @@ __pycache__/
 # Ignore snapshots folder completely
 assets/map_snapshots/
 
-# Ignore .html files
-*.html
-
-#Ignore json
+# Ignore JSON weather data
 data/pilot_weather.json
