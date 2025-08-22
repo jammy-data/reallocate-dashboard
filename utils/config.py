@@ -13,7 +13,7 @@ PRECISION_DECIMAL_DIGITS = int(os.getenv("PRECISION_DECIMAL_DIGITS", "4"))
 PROJ_ROOT = Path(__file__).resolve().parents[1]
 
 #Assets
-ASSETS_DIR = PROJ_ROOT / "data"
+ASSETS_DIR = PROJ_ROOT / "assets"
 
 IMAGES_DIR = ASSETS_DIR / "images"
 LOGOS_DIR = ASSETS_DIR / "logos"
