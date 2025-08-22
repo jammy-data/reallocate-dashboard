@@ -4,7 +4,7 @@ from utils.config import IMAGES_DIR
 
 def render_impact_buttons(update_impact_area):
     """
-    Render four impact area buttons with images in columns.
+    Render four impact area buttons with images in evenly spaced columns.
 
     Args:
         update_impact_area (callable): Function to call when a button is clicked.
@@ -16,19 +16,18 @@ def render_impact_buttons(update_impact_area):
     # Define impact areas
     impact_areas = ["Road Safety", "Environmental", "Transformative Governance", "Inclusivity/Accessibility"]
 
-    # Create layout columns
-    empty_col1, col1, col2, col3, col4, empty_col2 = st.columns([1, 2, 2, 2, 2, 1])
+    # Create columns dynamically with padding on the sides
+    num_buttons = len(impact_areas)
+    cols = st.columns([1] + [2]*num_buttons + [1])  # first and last are empty padding columns
+    button_cols = cols[1:-1]  # skip padding columns
 
-    for idx, col in enumerate([col1, col2, col3, col4]):
+    for idx, col in enumerate(button_cols):
         with col:
             # Render image above button
-            button_html = f"""
-            <div class="image-button">
-                <img src="{image_base64[idx]}" alt="{impact_areas[idx]}">
-            </div>
-            """
-            st.markdown(button_html, unsafe_allow_html=True)
-
+            st.markdown(
+                f'<div class="image-button"><img src="{image_base64[idx]}" alt="{impact_areas[idx]}"></div>',
+                unsafe_allow_html=True
+            )
             # Render the button
-            if st.button(f"{impact_areas[idx]}", key=f"{impact_areas[idx]}", type="primary"):
+            if st.button(impact_areas[idx], key=impact_areas[idx], type="primary"):
                 update_impact_area(impact_areas[idx])
