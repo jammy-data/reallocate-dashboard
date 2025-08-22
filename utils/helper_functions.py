@@ -9,6 +9,8 @@ from dotenv import load_dotenv
 import os
 import io
 from ckanapi import RemoteCKAN
+import streamlit as st
+from utils.config import CONFIG_DIR 
 
 MET_URL = "https://api.met.no/weatherapi/locationforecast/2.0/compact"
 
@@ -330,9 +332,9 @@ def load_html(file_path):
     with open(file_path, "r", encoding="utf-8") as file:
         return file.read()
     
-def get_base64_image(image_path):
-    with open(image_path, "rb") as img_file:
-        return base64.b64encode(img_file.read()).decode("utf-8")
+# def get_base64_image(image_path):
+#     with open(image_path, "rb") as img_file:
+#         return base64.b64encode(img_file.read()).decode("utf-8")
     
 
 def filter_pilots_by_category(pilot_df, filter_string):
@@ -399,3 +401,31 @@ def load_parquet_from_ckan(dataset_name: str, ckan_url: str = "https://reallocat
 
     df = pd.read_parquet(io.BytesIO(response.content))
     return df
+
+def get_api_url():
+    # Check if we're inside Docker (by checking the environment variable)
+    if os.getenv('DOCKER', 'false') == 'true':
+        return "http://host.docker.internal:8000/pilot_api_data"
+    else:
+        return "http://127.0.0.1:8000/pilot_api_data"
+    
+# Removes all pilot realted filters
+def reset_filters():
+    pilots_static_df = pd.read_json(CONFIG_DIR / 'pilot_static_data.json')
+
+    st.session_state["selected_sumi"] = None
+    st.session_state["impact_area"] = None
+    st.session_state["filtered_pilots_df"] = pilots_static_df  # Reset to all pilots
+    st.session_state.legend = st.session_state['kpi']
+
+
+# Function to encode local images as base64 and detect MIME type
+def get_base64_image(image_path):
+    with open(image_path, "rb") as img_file:
+        encoded = base64.b64encode(img_file.read()).decode()
+    
+    # Detect MIME type based on file extension
+    ext = os.path.splitext(image_path)[1].lower()
+    mime_type = "image/svg+xml" if ext == ".svg" else "image/png"
+    
+    return f"data:{mime_type};base64,{encoded}"
