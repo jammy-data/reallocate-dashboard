@@ -1,7 +1,8 @@
 streamlit1/
 __pycache__/
 *.pyc
-assets/map_snapshots/*
+# Ignore environment file
 .env
 
+# Ignore snapshots folder completely
 assets/map_snapshots/
