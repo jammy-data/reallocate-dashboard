@@ -1,5 +1,7 @@
 streamlit1/
 __pycache__/
 *.pyc
-./assets/map_snapshots/*.html
+assets/map_snapshots/*
 .env
+
+assets/map_snapshots/
