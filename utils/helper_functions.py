@@ -8,6 +8,7 @@ import base64
 from dotenv import load_dotenv
 import os
 import io
+import mimetypes
 from ckanapi import RemoteCKAN
 import streamlit as st
 from utils.config import CONFIG_DIR 
@@ -424,8 +425,9 @@ def get_base64_image(image_path):
     with open(image_path, "rb") as img_file:
         encoded = base64.b64encode(img_file.read()).decode()
     
-    # Detect MIME type based on file extension
-    ext = os.path.splitext(image_path)[1].lower()
-    mime_type = "image/svg+xml" if ext == ".svg" else "image/png"
+    # Detect MIME type automatically
+    mime_type, _ = mimetypes.guess_type(image_path)
+    if mime_type is None:
+        mime_type = "image/png"  # fallback
     
     return f"data:{mime_type};base64,{encoded}"

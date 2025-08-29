@@ -17,8 +17,8 @@ def render_header(legend_title, logo1_base64, logo2_base64):
                 <h2 class="custom-title2">{legend_title.replace("_", " ").title()}</h2>
             </div>
             <div class="logos-container">
-                <img src="data:image/png;base64,{logo2_base64}" class="logo" alt="REALLOCATE logo" />
-                <img src="data:image/jpeg;base64,{logo1_base64}" class="logo" alt="ITI logo" />
+                <img src="{logo2_base64}" class="logo" alt="REALLOCATE logo" />
+                <img src="{logo1_base64}" class="logo" alt="ITI logo" />
             </div>
         </div>
         """,

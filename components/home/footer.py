@@ -11,10 +11,11 @@ def render_footer(logo1_base64, logo2_base64):
                 © 2025 CERTH-ITI. All rights reserved.
             </div>
             <div class="footer-logos">
-                <img src="data:image/jpeg;base64,{logo1_base64}" class="footer-logo" alt="ITI logo" />
-                <img src="data:image/png;base64,{logo2_base64}" class="footer-logo" alt="REALLOCATE logo" />
+                <img src="{logo1_base64}" class="footer-logo" alt="ITI logo" />
+                <img src="{logo2_base64}" class="footer-logo" alt="REALLOCATE logo" />
             </div>
         </div>
         """,
         unsafe_allow_html=True
     )
+    f"<img src='{logo1_base64}' height='60'>",
