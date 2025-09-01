@@ -3,7 +3,8 @@ import subprocess
 import time
 import requests
 import streamlit as st
-from utils.config import LOGOS_DIR
+from streamlit import Page
+from utils.config import LOGOS_DIR, PAGES_DIR
 # --- Set favicon and page layout ---
 st.set_page_config(
     page_title="REALLOCATE Dashboard",
@@ -27,10 +28,9 @@ def start_backend():
 start_backend()
 
 # --- Streamlit pages ---
-from streamlit import Page
 
-home = Page("pages/1_home.py", title="Home", icon="🏠")
-pilot = Page("pages/2_pilot.py", title="Pilot", icon="👨‍✈️")
+home = Page(PAGES_DIR/"1_home.py", title="Home", )
+pilot = Page(PAGES_DIR/"2_pilot.py", title="Pilot")
 
 pg = st.navigation(
     {
