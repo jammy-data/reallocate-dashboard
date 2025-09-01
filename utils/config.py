@@ -33,3 +33,5 @@ DATA_DIR = PROJ_ROOT / "data"
 
 PILOTS_DIR = DATA_DIR / "pilots"
 
+#Pages
+PAGES_DIR = PROJ_ROOT / "pages"
