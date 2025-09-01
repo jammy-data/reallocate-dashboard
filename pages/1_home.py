@@ -72,7 +72,6 @@ header.render_header(st.session_state.legend, logo1_base64, logo2_base64)
 # --- Layout: left controls / right map ---
 col1, col2 = st.columns([1.75, 4])
 controls_panel.render_controls(col1, indicators, update_pilots)
-impact_buttons.render_impact_buttons(update_impact_area)
 
 pilot_map.render_pilot_map(
     df=st.session_state.filtered_pilots_df,
@@ -81,6 +80,7 @@ pilot_map.render_pilot_map(
     col1=col1,
     col2=col2
 )
+impact_buttons.render_impact_buttons(update_impact_area)
 
 kpi_selector.render_kpi_selector(indicator_list, on_change_callback=reset_sumi)
 
