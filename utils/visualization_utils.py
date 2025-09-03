@@ -2,6 +2,9 @@
 import streamlit as st
 import pandas as pd
 import matplotlib.pyplot as plt
+import plotly.express as px
+import os
+import json
 
 def create_barplot(data):
     """
@@ -87,3 +90,69 @@ def create_linechart(data, highlight_start, highlight_end):
     plt.grid()
     plt.tight_layout()
     st.pyplot(plt)
+
+
+def show_kpi_data(file_path, kpi_title, kpi_description, kpi_unit):
+    # Load CSV
+    df = pd.read_csv(file_path)
+
+    # Create two columns
+    col1, col2 = st.columns(2)
+
+    # Left column: breakdown selector
+    breakdowns = df["breakdown"].unique().tolist()
+    with col1:
+        selected_breakdown = st.selectbox("🔎 Select breakdown", breakdowns)
+
+    # Right column: plot type selector
+    plot_types = ["Bar", "Pie", "Line"]
+    with col2:
+        selected_plot = st.selectbox("📊 Select plot type", plot_types)
+
+    # Filter data
+    filtered = df[df["breakdown"] == selected_breakdown]
+
+    # Choose plot type
+    if selected_plot == "Bar":
+        fig = px.bar(
+            filtered,
+            x="category",
+            y="value",
+            text="value",
+            labels={"value": kpi_unit, "category": selected_breakdown.capitalize()},
+            title=kpi_title
+        )
+        fig.update_traces(textposition="outside")
+
+    elif selected_plot == "Pie":
+        fig = px.pie(
+            filtered,
+            names="category",
+            values="value",
+            title=kpi_title
+        )
+
+    elif selected_plot == "Line":
+        fig = px.line(
+            filtered,
+            x="category",
+            y="value",
+            markers=True,
+            labels={"value": kpi_unit, "category": selected_breakdown.capitalize()},
+            title=kpi_title
+        )
+
+    # Add description as annotation
+    fig.add_annotation(
+        text=f"<b>Description:</b> {kpi_description}",
+        xref="paper", yref="paper",
+        x=0, y=1.05,
+        showarrow=False,
+        align="left",
+        bordercolor="gray",
+        borderwidth=1,
+        bgcolor="white",
+        opacity=0.9
+    )
+
+    st.plotly_chart(fig, use_container_width=True)
