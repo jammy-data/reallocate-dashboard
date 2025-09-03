@@ -3,9 +3,7 @@ __pycache__/
 *.pyc
 # Ignore environment file
 .env
-
-# Ignore snapshots folder completely
-assets/map_snapshots/
+./assets/map_snapshots/*.html
 
 # Ignore JSON weather data
 data/pilot_weather.json
