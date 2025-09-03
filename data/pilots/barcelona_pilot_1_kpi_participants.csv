@@ -1,0 +1,15 @@
+breakdown,category,value,year
+location,Carrer de Sants,204,2024
+location,Consell de Cent,202,2024
+location,Glòries,199,2024
+location,Gran de Sant Andreu,201,2024
+mode,Bicycle,153,2024
+mode,Scooter,104,2024
+mode,Pedestrian,549,2024
+gender,Woman,339,2024
+gender,Man,462,2024
+age,18-29,196,2024
+age,30-39,232,2024
+age,40-49,107,2024
+age,50-59,94,2024
+age,60+,146,2024
