@@ -28,6 +28,11 @@ def render_impact_buttons(update_impact_area):
                 f'<div class="image-button"><img src="{image_base64[idx]}" alt="{impact_areas[idx]}"></div>',
                 unsafe_allow_html=True
             )
-            # Render the button
-            if st.button(impact_areas[idx], key=impact_areas[idx], type="primary"):
-                update_impact_area(impact_areas[idx])
+            # Render the button with on_click
+            st.button(
+                impact_areas[idx],
+                key=impact_areas[idx],
+                type="primary",
+                on_click=update_impact_area,
+                args=(impact_areas[idx],)
+            )
