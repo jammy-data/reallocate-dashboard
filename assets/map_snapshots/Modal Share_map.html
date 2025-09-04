@@ -1,0 +1,466 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_0c3b9f12fbafd43efdff8b8896e76f9c {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_0c3b9f12fbafd43efdff8b8896e76f9c" ></div>
+        
+    
+<div
+  id="maplegend"
+  class="maplegend"
+  style="
+    position: absolute;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 10.5px;
+    right: 20px;
+    top: 20px;
+  "
+>
+  <!-- Text labels for min and max values of the color scale -->
+  <div style="text-align: justify; font-size: 12px">
+    <span style="color: red">Low</span>
+    <span style="color: green; float: right">High</span>
+  </div>
+
+  <!-- Gradient color scale from red to green -->
+  <div class="legend-scale" style="margin-bottom: 10px">
+    <!-- Added margin-bottom for spacing -->
+    <ul class="legend-labels">
+      <li>
+        <span
+          style="
+            background: linear-gradient(to right, red, yellow, green);
+            width: 150px;
+            height: 20px;
+            display: block;
+          "
+        ></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Fixed legend for missing data with spacing -->
+  <div class="legend-scale" style="margin-top: 10px">
+    <!-- Added margin-top for space -->
+    <ul class="legend-labels">
+      <li>
+        <span
+          style="
+            background-color: rgba(128, 128, 128, 0.6);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid grey;
+          "
+        ></span>
+        Data Missing
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style type="text/css">
+  .maplegend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    color: #0f0f0f;
+  }
+  .maplegend .legend-scale ul li {
+    list-style: none;
+    line-height: 18px;
+    margin-bottom: 1.5px;
+  }
+  .maplegend ul.legend-labels li span {
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin-right: 4.5px;
+  }
+  .legend-scale ul.legend-labels li span {
+    margin-bottom: 5px;
+  } /* Ensure consistent spacing between list items */
+</style>
+</body>
+<script>
+    
+    
+            var map_0c3b9f12fbafd43efdff8b8896e76f9c = L.map(
+                "map_0c3b9f12fbafd43efdff8b8896e76f9c",
+                {
+                    center: [50.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_12600345ab7cd60aaa9fe7dd5bab36b5 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_12600345ab7cd60aaa9fe7dd5bab36b5.addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+            var circle_marker_ed14692bba7e88992a0d1538e2e9db10 = L.circleMarker(
+                [57.70887, 11.97456],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_daace7fb1ab2f08cff0c9602b52310ed = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_70d6b2781bd4d32a0d7205a545bc3de0 = $(`<div id="html_70d6b2781bd4d32a0d7205a545bc3de0" style="width: 100.0%; height: 100.0%;">                 <b>Gothenburg (pilot 1)</b><br>                 🌡️&nbsp;23.2°C&nbsp;&nbsp;                 💧&nbsp;40.2%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;95%&nbsp;&nbsp;                 🚗&nbsp;50%&nbsp;                 </div>`)[0];
+                popup_daace7fb1ab2f08cff0c9602b52310ed.setContent(html_70d6b2781bd4d32a0d7205a545bc3de0);
+            
+        
+
+        circle_marker_ed14692bba7e88992a0d1538e2e9db10.bindPopup(popup_daace7fb1ab2f08cff0c9602b52310ed)
+        ;
+
+        
+    
+    
+            var circle_marker_586e7968cbcb9c879e74aeb30993ab74 = L.circleMarker(
+                [57.72887, 11.99456],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_611c303f6c9b2a56e7c041ae36719745 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_1e5ae40189699b12168f2fee0b703274 = $(`<div id="html_1e5ae40189699b12168f2fee0b703274" style="width: 100.0%; height: 100.0%;">                 <b>Gothenburg (pilot 2)</b><br>                 🌡️&nbsp;23.3°C&nbsp;&nbsp;                 💧&nbsp;42.2%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;98%&nbsp;&nbsp;                 🚗&nbsp;0%&nbsp;                 </div>`)[0];
+                popup_611c303f6c9b2a56e7c041ae36719745.setContent(html_1e5ae40189699b12168f2fee0b703274);
+            
+        
+
+        circle_marker_586e7968cbcb9c879e74aeb30993ab74.bindPopup(popup_611c303f6c9b2a56e7c041ae36719745)
+        ;
+
+        
+    
+    
+            var circle_marker_a917919a00a46e0e1c58fa8bdaecea85 = L.circleMarker(
+                [49.39875, 8.672433999999999],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_8e52383eac2bd6e1d9feac2f44687992 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dce4acab2d623eb355e462344ba1f6d5 = $(`<div id="html_dce4acab2d623eb355e462344ba1f6d5" style="width: 100.0%; height: 100.0%;">                 <b>Heidelberg (pilot 1)</b><br>                 🌡️&nbsp;23.7°C&nbsp;&nbsp;                 💧&nbsp;53.2%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;95%&nbsp;&nbsp;                 🚗&nbsp;15%&nbsp;                 </div>`)[0];
+                popup_8e52383eac2bd6e1d9feac2f44687992.setContent(html_dce4acab2d623eb355e462344ba1f6d5);
+            
+        
+
+        circle_marker_a917919a00a46e0e1c58fa8bdaecea85.bindPopup(popup_8e52383eac2bd6e1d9feac2f44687992)
+        ;
+
+        
+    
+    
+            var circle_marker_e02772dab4e0427abf894def6a631f9b = L.circleMarker(
+                [49.37875, 8.652434],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_07e723cbf5ada05e7c961565eb485ede = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_15e121200f71780ef1a4a19f69f27bbb = $(`<div id="html_15e121200f71780ef1a4a19f69f27bbb" style="width: 100.0%; height: 100.0%;">                 <b>Heidelberg (pilot 2)</b><br>                 🌡️&nbsp;23.7°C&nbsp;&nbsp;                 💧&nbsp;53.2%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;95%&nbsp;&nbsp;                 🚗&nbsp;0%&nbsp;                 </div>`)[0];
+                popup_07e723cbf5ada05e7c961565eb485ede.setContent(html_15e121200f71780ef1a4a19f69f27bbb);
+            
+        
+
+        circle_marker_e02772dab4e0427abf894def6a631f9b.bindPopup(popup_07e723cbf5ada05e7c961565eb485ede)
+        ;
+
+        
+    
+    
+            var circle_marker_025681eb7839041f0a4143f1dc9ff3ad = L.circleMarker(
+                [41.3887750526896, 2.18138428632556],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_2c36a4e118bbc3fa3f53819b2283987b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_301955f157203543fb55a1437bfa30ee = $(`<div id="html_301955f157203543fb55a1437bfa30ee" style="width: 100.0%; height: 100.0%;">                 <b>Barcelona (pilot 1)</b><br>                 🌡️&nbsp;26.4°C&nbsp;&nbsp;                 💧&nbsp;65.9%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;95%&nbsp;&nbsp;                 🚗&nbsp;53%&nbsp;                 </div>`)[0];
+                popup_2c36a4e118bbc3fa3f53819b2283987b.setContent(html_301955f157203543fb55a1437bfa30ee);
+            
+        
+
+        circle_marker_025681eb7839041f0a4143f1dc9ff3ad.bindPopup(popup_2c36a4e118bbc3fa3f53819b2283987b)
+        ;
+
+        
+    
+    
+            var circle_marker_8cc37d1bd96d184e9991aa69a6a6889f = L.circleMarker(
+                [41.3687750526896, 2.16138428632556],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_248fc533b671963fac108d8f21dc0d13 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_513dd07f8136eb3f548cdaae75ca3f49 = $(`<div id="html_513dd07f8136eb3f548cdaae75ca3f49" style="width: 100.0%; height: 100.0%;">                 <b>Barcelona (pilot 2)</b><br>                 🌡️&nbsp;25.8°C&nbsp;&nbsp;                 💧&nbsp;65.9%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;96%&nbsp;&nbsp;                 🚗&nbsp;0%&nbsp;                 </div>`)[0];
+                popup_248fc533b671963fac108d8f21dc0d13.setContent(html_513dd07f8136eb3f548cdaae75ca3f49);
+            
+        
+
+        circle_marker_8cc37d1bd96d184e9991aa69a6a6889f.bindPopup(popup_248fc533b671963fac108d8f21dc0d13)
+        ;
+
+        
+    
+    
+            var circle_marker_9eebea1b853d00e5bc626e80b808fbf8 = L.circleMarker(
+                [47.497913, 19.040236],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_cd1e8929c0b166ab92b6244a89632413 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_6ff6600001cf60921e90cb0edf0fc503 = $(`<div id="html_6ff6600001cf60921e90cb0edf0fc503" style="width: 100.0%; height: 100.0%;">                 <b>Budapest (pilot 1)</b><br>                 🌡️&nbsp;25.9°C&nbsp;&nbsp;                 💧&nbsp;51.5%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;97%&nbsp;&nbsp;                 🚗&nbsp;66%&nbsp;                 </div>`)[0];
+                popup_cd1e8929c0b166ab92b6244a89632413.setContent(html_6ff6600001cf60921e90cb0edf0fc503);
+            
+        
+
+        circle_marker_9eebea1b853d00e5bc626e80b808fbf8.bindPopup(popup_cd1e8929c0b166ab92b6244a89632413)
+        ;
+
+        
+    
+    
+            var circle_marker_29747dd29d8c527276c130afa2b67f3d = L.circleMarker(
+                [47.487913, 19.060236],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_33ae8c8d73ed6e75d1aa3f02ece12d8d = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bc4c4a1f2e2958ac2e2f4148e27c1d0b = $(`<div id="html_bc4c4a1f2e2958ac2e2f4148e27c1d0b" style="width: 100.0%; height: 100.0%;">                 <b>Budapest (pilot 2)</b><br>                 🌡️&nbsp;26.4°C&nbsp;&nbsp;                 💧&nbsp;50.3%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;98%&nbsp;&nbsp;                 🚗&nbsp;84%&nbsp;                 </div>`)[0];
+                popup_33ae8c8d73ed6e75d1aa3f02ece12d8d.setContent(html_bc4c4a1f2e2958ac2e2f4148e27c1d0b);
+            
+        
+
+        circle_marker_29747dd29d8c527276c130afa2b67f3d.bindPopup(popup_33ae8c8d73ed6e75d1aa3f02ece12d8d)
+        ;
+
+        
+    
+    
+            var circle_marker_737e87db1bbbf449ea6ca6440d6fa45c = L.circleMarker(
+                [45.7646276142591, 4.83238022968845],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_80f22a0c8f4d31cc6555415da8f6024c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_10720a3aed9ef3b9a04bf66549a978f5 = $(`<div id="html_10720a3aed9ef3b9a04bf66549a978f5" style="width: 100.0%; height: 100.0%;">                 <b>Lyon (pilot 1)</b><br>                 🌡️&nbsp;24.8°C&nbsp;&nbsp;                 💧&nbsp;60.4%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;92%&nbsp;&nbsp;                 🚗&nbsp;38%&nbsp;                 </div>`)[0];
+                popup_80f22a0c8f4d31cc6555415da8f6024c.setContent(html_10720a3aed9ef3b9a04bf66549a978f5);
+            
+        
+
+        circle_marker_737e87db1bbbf449ea6ca6440d6fa45c.bindPopup(popup_80f22a0c8f4d31cc6555415da8f6024c)
+        ;
+
+        
+    
+    
+            var circle_marker_802828c2aaee8cea94e71e6c38919067 = L.circleMarker(
+                [45.7546276142591, 4.81238022968845],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_0f1dc0512862b6533e01d8c207074406 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_ad7aa66a192e8f3e99e18a051458d76c = $(`<div id="html_ad7aa66a192e8f3e99e18a051458d76c" style="width: 100.0%; height: 100.0%;">                 <b>Lyon (pilot 2)</b><br>                 🌡️&nbsp;24.8°C&nbsp;&nbsp;                 💧&nbsp;60.4%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;92%&nbsp;&nbsp;                 🚗&nbsp;33%&nbsp;                 </div>`)[0];
+                popup_0f1dc0512862b6533e01d8c207074406.setContent(html_ad7aa66a192e8f3e99e18a051458d76c);
+            
+        
+
+        circle_marker_802828c2aaee8cea94e71e6c38919067.bindPopup(popup_0f1dc0512862b6533e01d8c207074406)
+        ;
+
+        
+    
+    
+            var circle_marker_a21d87cb505532f309bab93ee5dcd443 = L.circleMarker(
+                [44.498955, 11.327591],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_70bcbe95ca88abf11be060a828f02b5f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_97cdcac5ae126e308ca22d1f4113565b = $(`<div id="html_97cdcac5ae126e308ca22d1f4113565b" style="width: 100.0%; height: 100.0%;">                 <b>Bologna</b><br>                 🌡️&nbsp;27.8°C&nbsp;&nbsp;                 💧&nbsp;39.6%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;95%&nbsp;&nbsp;                 🚗&nbsp;21%&nbsp;                 </div>`)[0];
+                popup_70bcbe95ca88abf11be060a828f02b5f.setContent(html_97cdcac5ae126e308ca22d1f4113565b);
+            
+        
+
+        circle_marker_a21d87cb505532f309bab93ee5dcd443.bindPopup(popup_70bcbe95ca88abf11be060a828f02b5f)
+        ;
+
+        
+    
+    
+            var circle_marker_487bf4d6cde3c9b87382db4aa101a11f = L.circleMarker(
+                [52.0919, 5.123],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_d4c9dd7610909960e24faed0f837ee30 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_c5a92144c491f710b2ff1bd30830ab1d = $(`<div id="html_c5a92144c491f710b2ff1bd30830ab1d" style="width: 100.0%; height: 100.0%;">                 <b>Utrecht</b><br>                 🌡️&nbsp;21.7°C&nbsp;&nbsp;                 💧&nbsp;74.2%&nbsp;&nbsp;                 ☔&nbsp;3.5mm&nbsp;&nbsp;                 🍃&nbsp;97%&nbsp;&nbsp;                 🚗&nbsp;33%&nbsp;                 </div>`)[0];
+                popup_d4c9dd7610909960e24faed0f837ee30.setContent(html_c5a92144c491f710b2ff1bd30830ab1d);
+            
+        
+
+        circle_marker_487bf4d6cde3c9b87382db4aa101a11f.bindPopup(popup_d4c9dd7610909960e24faed0f837ee30)
+        ;
+
+        
+    
+    
+            var circle_marker_25c9669f65350ccd7dc88c1f45ffa5a2 = L.circleMarker(
+                [61.5007546302076, 23.7478616548067],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_d118228573c70d48ae673493e17ffd8a = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_426fbcc84e3b93c5856b40b381b83fcc = $(`<div id="html_426fbcc84e3b93c5856b40b381b83fcc" style="width: 100.0%; height: 100.0%;">                 <b>Tampere</b><br>                 🌡️&nbsp;18.0°C&nbsp;&nbsp;                 💧&nbsp;92.1%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;96%&nbsp;&nbsp;                 🚗&nbsp;0%&nbsp;                 </div>`)[0];
+                popup_d118228573c70d48ae673493e17ffd8a.setContent(html_426fbcc84e3b93c5856b40b381b83fcc);
+            
+        
+
+        circle_marker_25c9669f65350ccd7dc88c1f45ffa5a2.bindPopup(popup_d118228573c70d48ae673493e17ffd8a)
+        ;
+
+        
+    
+    
+            var circle_marker_12fa8d61325082d45e6171725138ca50 = L.circleMarker(
+                [52.2297, 21.0122],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_0d9d4b03614d098ed14fedac2c73884b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_486f6dc864ca2bfd373dc19febf884ef = $(`<div id="html_486f6dc864ca2bfd373dc19febf884ef" style="width: 100.0%; height: 100.0%;">                 <b>Warsaw</b><br>                 🌡️&nbsp;22.7°C&nbsp;&nbsp;                 💧&nbsp;60.8%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;89%&nbsp;&nbsp;                 🚗&nbsp;0%&nbsp;                 </div>`)[0];
+                popup_0d9d4b03614d098ed14fedac2c73884b.setContent(html_486f6dc864ca2bfd373dc19febf884ef);
+            
+        
+
+        circle_marker_12fa8d61325082d45e6171725138ca50.bindPopup(popup_0d9d4b03614d098ed14fedac2c73884b)
+        ;
+
+        
+    
+    
+            var circle_marker_24c5d8a25f6fd1c12f4ede17a58bd050 = L.circleMarker(
+                [45.815, 15.9819],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_0c3b9f12fbafd43efdff8b8896e76f9c);
+        
+    
+        var popup_260a09d93d7bc163a01843e5fc62abe8 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_9c4e43c26f972b4709cedee15f6c11fc = $(`<div id="html_9c4e43c26f972b4709cedee15f6c11fc" style="width: 100.0%; height: 100.0%;">                 <b>Zagreb</b><br>                 🌡️&nbsp;23.4°C&nbsp;&nbsp;                 💧&nbsp;63.9%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;96%&nbsp;&nbsp;                 🚗&nbsp;100%&nbsp;                 </div>`)[0];
+                popup_260a09d93d7bc163a01843e5fc62abe8.setContent(html_9c4e43c26f972b4709cedee15f6c11fc);
+            
+        
+
+        circle_marker_24c5d8a25f6fd1c12f4ede17a58bd050.bindPopup(popup_260a09d93d7bc163a01843e5fc62abe8)
+        ;
+
+        
+    
+</script>
+</html>

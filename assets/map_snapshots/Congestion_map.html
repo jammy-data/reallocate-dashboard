@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_bc9aadc608af0ea2490762911f56a5bf {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_bc9aadc608af0ea2490762911f56a5bf" ></div>
+        
+    
+<div
+  id="maplegend"
+  class="maplegend"
+  style="
+    position: absolute;
+    z-index: 9999;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 6px;
+    padding: 10px;
+    font-size: 10.5px;
+    right: 20px;
+    top: 20px;
+  "
+>
+  <!-- Text labels for min and max values of the color scale -->
+  <div style="text-align: justify; font-size: 12px">
+    <span style="color: red">Low</span>
+    <span style="color: green; float: right">High</span>
+  </div>
+
+  <!-- Gradient color scale from red to green -->
+  <div class="legend-scale" style="margin-bottom: 10px">
+    <!-- Added margin-bottom for spacing -->
+    <ul class="legend-labels">
+      <li>
+        <span
+          style="
+            background: linear-gradient(to right, red, yellow, green);
+            width: 150px;
+            height: 20px;
+            display: block;
+          "
+        ></span>
+      </li>
+    </ul>
+  </div>
+
+  <!-- Fixed legend for missing data with spacing -->
+  <div class="legend-scale" style="margin-top: 10px">
+    <!-- Added margin-top for space -->
+    <ul class="legend-labels">
+      <li>
+        <span
+          style="
+            background-color: rgba(128, 128, 128, 0.6);
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            border: 3px solid grey;
+          "
+        ></span>
+        Data Missing
+      </li>
+    </ul>
+  </div>
+</div>
+
+<style type="text/css">
+  .maplegend .legend-scale ul {
+    margin: 0;
+    padding: 0;
+    color: #0f0f0f;
+  }
+  .maplegend .legend-scale ul li {
+    list-style: none;
+    line-height: 18px;
+    margin-bottom: 1.5px;
+  }
+  .maplegend ul.legend-labels li span {
+    float: left;
+    height: 16px;
+    width: 16px;
+    margin-right: 4.5px;
+  }
+  .legend-scale ul.legend-labels li span {
+    margin-bottom: 5px;
+  } /* Ensure consistent spacing between list items */
+</style>
+</body>
+<script>
+    
+    
+            var map_bc9aadc608af0ea2490762911f56a5bf = L.map(
+                "map_bc9aadc608af0ea2490762911f56a5bf",
+                {
+                    center: [50.0, 10.0],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 4,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_d20f296c9ea4408edeb6c3f7bb5d7909 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_d20f296c9ea4408edeb6c3f7bb5d7909.addTo(map_bc9aadc608af0ea2490762911f56a5bf);
+        
+    
+            var circle_marker_f7fc3477fc83ee73ab41f40b3bf10207 = L.circleMarker(
+                [49.39875, 8.672433999999999],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_bc9aadc608af0ea2490762911f56a5bf);
+        
+    
+        var popup_965b2c2983abbbb051e4c506e2f94c94 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_b9b8c9aa73ca3dd87618b25b7b4ae857 = $(`<div id="html_b9b8c9aa73ca3dd87618b25b7b4ae857" style="width: 100.0%; height: 100.0%;">                 <b>Heidelberg (pilot 1)</b><br>                 🌡️&nbsp;23.7°C&nbsp;&nbsp;                 💧&nbsp;53.2%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;95%&nbsp;&nbsp;                 🚗&nbsp;15%&nbsp;                 </div>`)[0];
+                popup_965b2c2983abbbb051e4c506e2f94c94.setContent(html_b9b8c9aa73ca3dd87618b25b7b4ae857);
+            
+        
+
+        circle_marker_f7fc3477fc83ee73ab41f40b3bf10207.bindPopup(popup_965b2c2983abbbb051e4c506e2f94c94)
+        ;
+
+        
+    
+    
+            var circle_marker_89d084a3e7b75dbee592c79fc6f13647 = L.circleMarker(
+                [45.7646276142591, 4.83238022968845],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_bc9aadc608af0ea2490762911f56a5bf);
+        
+    
+        var popup_d2cdeac809558e8bfe1c2b5468605d0b = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_273748455ba6af12d253dbf82406aeeb = $(`<div id="html_273748455ba6af12d253dbf82406aeeb" style="width: 100.0%; height: 100.0%;">                 <b>Lyon (pilot 1)</b><br>                 🌡️&nbsp;24.8°C&nbsp;&nbsp;                 💧&nbsp;60.4%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;92%&nbsp;&nbsp;                 🚗&nbsp;38%&nbsp;                 </div>`)[0];
+                popup_d2cdeac809558e8bfe1c2b5468605d0b.setContent(html_273748455ba6af12d253dbf82406aeeb);
+            
+        
+
+        circle_marker_89d084a3e7b75dbee592c79fc6f13647.bindPopup(popup_d2cdeac809558e8bfe1c2b5468605d0b)
+        ;
+
+        
+    
+    
+            var circle_marker_ee2e0fa51656c7c09f9ec29ae61a1ff1 = L.circleMarker(
+                [45.7546276142591, 4.81238022968845],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_bc9aadc608af0ea2490762911f56a5bf);
+        
+    
+        var popup_029c60a51ba6ce7c85e0e5acf29d6792 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_bdca2cbdfc5d945feb10aa63846d1e78 = $(`<div id="html_bdca2cbdfc5d945feb10aa63846d1e78" style="width: 100.0%; height: 100.0%;">                 <b>Lyon (pilot 2)</b><br>                 🌡️&nbsp;24.8°C&nbsp;&nbsp;                 💧&nbsp;60.4%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;92%&nbsp;&nbsp;                 🚗&nbsp;33%&nbsp;                 </div>`)[0];
+                popup_029c60a51ba6ce7c85e0e5acf29d6792.setContent(html_bdca2cbdfc5d945feb10aa63846d1e78);
+            
+        
+
+        circle_marker_ee2e0fa51656c7c09f9ec29ae61a1ff1.bindPopup(popup_029c60a51ba6ce7c85e0e5acf29d6792)
+        ;
+
+        
+    
+    
+            var circle_marker_ac3fed1df82a0f947bf9538d7da99c9a = L.circleMarker(
+                [61.5007546302076, 23.7478616548067],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_bc9aadc608af0ea2490762911f56a5bf);
+        
+    
+        var popup_37f000c56fb0248fc2d97d2063a5cbea = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_27dd7f383ae4dbd9b74cacebc5accd58 = $(`<div id="html_27dd7f383ae4dbd9b74cacebc5accd58" style="width: 100.0%; height: 100.0%;">                 <b>Tampere</b><br>                 🌡️&nbsp;18.0°C&nbsp;&nbsp;                 💧&nbsp;92.1%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;96%&nbsp;&nbsp;                 🚗&nbsp;0%&nbsp;                 </div>`)[0];
+                popup_37f000c56fb0248fc2d97d2063a5cbea.setContent(html_27dd7f383ae4dbd9b74cacebc5accd58);
+            
+        
+
+        circle_marker_ac3fed1df82a0f947bf9538d7da99c9a.bindPopup(popup_37f000c56fb0248fc2d97d2063a5cbea)
+        ;
+
+        
+    
+    
+            var circle_marker_4444aa6d6b5477ad959fdf99630eae06 = L.circleMarker(
+                [45.815, 15.9819],
+                {"bubblingMouseEvents": true, "color": "rgb(128, 128, 128)", "dashArray": null, "dashOffset": null, "fill": true, "fillColor": "rgb(128, 128, 128)", "fillOpacity": 0.6, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "opacity": 1.0, "radius": 8, "stroke": true, "weight": 3}
+            ).addTo(map_bc9aadc608af0ea2490762911f56a5bf);
+        
+    
+        var popup_123d47b593aa404a0bb20a0af612d46f = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_a04afe8093a843091fd19b7936e5a5b0 = $(`<div id="html_a04afe8093a843091fd19b7936e5a5b0" style="width: 100.0%; height: 100.0%;">                 <b>Zagreb</b><br>                 🌡️&nbsp;23.4°C&nbsp;&nbsp;                 💧&nbsp;63.9%&nbsp;&nbsp;                 ☔&nbsp;0.0mm&nbsp;&nbsp;                 🍃&nbsp;96%&nbsp;&nbsp;                 🚗&nbsp;100%&nbsp;                 </div>`)[0];
+                popup_123d47b593aa404a0bb20a0af612d46f.setContent(html_a04afe8093a843091fd19b7936e5a5b0);
+            
+        
+
+        circle_marker_4444aa6d6b5477ad959fdf99630eae06.bindPopup(popup_123d47b593aa404a0bb20a0af612d46f)
+        ;
+
+        
+    
+</script>
+</html>
